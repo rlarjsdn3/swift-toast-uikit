@@ -9,6 +9,8 @@ import UIKit
 
 public struct ToastConfiguration {
     
+    // MARK: - Properties
+    
     public let direction: Toast.Direction
     public let dismissables: [Toast.Dismssable]
     public let animationTime: TimeInterval
@@ -18,6 +20,9 @@ public struct ToastConfiguration {
     public let allowToastOverlap: Bool
     
     public let view: UIView?
+    
+    
+    // MARK: - Intializer
     
     public init(
         direction: Toast.Direction = .top,
@@ -40,6 +45,9 @@ public struct ToastConfiguration {
     }
     
 }
+
+
+// MARK: - Extensions
 
 private extension ToastConfiguration {
     

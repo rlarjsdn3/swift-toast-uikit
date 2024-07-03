@@ -9,6 +9,8 @@ import UIKit
 
 public struct ToastViewConfiguration {
     
+    // MARK: - Properties
+    
     public let minWidth: CGFloat
     public let minHeight: CGFloat
     
@@ -19,6 +21,9 @@ public struct ToastViewConfiguration {
     public let subtitleNumberOfLines: Int
     
     public let cornerRadius: CGFloat?
+    
+    
+    // MARK: - Intializer
     
     public init(
         minWidth: CGFloat = 150,

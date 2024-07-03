@@ -129,8 +129,6 @@ public class Toast {
 #endif
     
     public func show(after delay: TimeInterval = 0) {
-        print("TopController: \(ToastHelper.topController())")
-        
         if let backgroundView = self.createBackgroundView() {
             self.backgroundView = backgroundView
             config.view?.addSubview(backgroundView) ?? ToastHelper.topController()?.view.addSubview(backgroundView)
@@ -144,7 +142,7 @@ public class Toast {
         config.enteringAnimation.apply(to: self.view)
         let endBackgroundColor = backgroundView?.backgroundColor
         backgroundView?.backgroundColor = .clear
-        UIView.animate(withDuration: config.animationTime, delay: delay, options: [.curveEaseOut, .allowUserInteraction]) {
+        UIView.animate(withDuration: config.animationTime, delay: delay, options: [.curveEaseIn, .allowUserInteraction]) {
             self.config.enteringAnimation.undo(from: self.view)
             self.backgroundView?.backgroundColor = endBackgroundColor
         } completion: { [self] _ in
@@ -189,26 +187,6 @@ public class Toast {
         }
     }
     
-    // MARK: - Helpers
-    
-    
-    public func addDelegate(delegate: ToastDelegate) -> Void {
-        multicast.add(delegate)
-    }
-    
-    private func createBackgroundView() -> UIView? {
-        switch config.background {
-        case .none:
-            return nil
-        case .color(let color):
-            let backgroundView = UIView(frame: config.view?.frame
-                                    ?? ToastHelper.topController()?.view.frame ?? .zero)
-            backgroundView.backgroundColor = color
-            backgroundView.layer.zPosition = 998
-            return backgroundView
-        }
-    }
-    
     
     // MARK: - Intializer
     
@@ -235,6 +213,27 @@ public class Toast {
 
 
 // MARK: - Extensions
+
+extension Toast {
+    
+    public func addDelegate(delegate: ToastDelegate) -> Void {
+        multicast.add(delegate)
+    }
+    
+    private func createBackgroundView() -> UIView? {
+        switch config.background {
+        case .none:
+            return nil
+        case .color(let color):
+            let backgroundView = UIView(frame: config.view?.frame
+                                    ?? ToastHelper.topController()?.view.frame ?? .zero)
+            backgroundView.backgroundColor = color
+            backgroundView.layer.zPosition = 998 // ⭐️
+            return backgroundView
+        }
+    }
+    
+}
 
 extension Toast {
     
@@ -314,15 +313,6 @@ extension Toast {
                 }
             }
         }
-    }
-    
-}
-
-extension Toast {
-    
-    public enum Background: Equatable {
-        case none,
-             color(color: UIColor = defaultImageTint.withAlphaComponent(0.25))
     }
     
 }

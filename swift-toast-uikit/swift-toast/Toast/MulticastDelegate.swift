@@ -7,7 +7,7 @@
 
 import Foundation
 
-class MulticastDelegate<T> {
+final class MulticastDelegate<T> {
     
     private let delegates: NSHashTable<AnyObject> = NSHashTable()
     
@@ -15,7 +15,7 @@ class MulticastDelegate<T> {
         delegates.add(delegate as AnyObject)
     }
     
-    func remoe(_ delegateToRemove: T) {
+    func remove(_ delegateToRemove: T) {
         for delegate in delegates.allObjects.reversed() {
             if delegate === delegateToRemove as AnyObject {
                 delegates.remove(delegate)
@@ -23,9 +23,9 @@ class MulticastDelegate<T> {
         }
     }
     
-    func invoke(_ invoacation: (T) -> Void) {
+    func invoke(_ invocation: (T) -> Void) {
         for delegate in delegates.allObjects.reversed() {
-            invoacation(delegate as! T)
+            invocation(delegate as! T)
         }
     }
     
