@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		9EA7F7182C33A79700B66668 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA7F7172C33A79700B66668 /* AppDelegate.swift */; };
 		9EA7F71A2C33A79700B66668 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA7F7192C33A79700B66668 /* SceneDelegate.swift */; };
-		9EA7F71C2C33A79700B66668 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA7F71B2C33A79700B66668 /* ViewController.swift */; };
+		9EA7F71C2C33A79700B66668 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA7F71B2C33A79700B66668 /* MainViewController.swift */; };
 		9EA7F71F2C33A79700B66668 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 9EA7F71E2C33A79700B66668 /* Base */; };
 		9EA7F7212C33A79A00B66668 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9EA7F7202C33A79A00B66668 /* Assets.xcassets */; };
 		9EA7F7242C33A79A00B66668 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 9EA7F7232C33A79A00B66668 /* Base */; };
@@ -25,13 +25,16 @@
 		9EA7F7422C33C5BB00B66668 /* TextToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA7F7412C33C5BB00B66668 /* TextToastView.swift */; };
 		9EA7F7442C33CB0800B66668 /* IconAppleToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA7F7432C33CB0800B66668 /* IconAppleToastView.swift */; };
 		9EA7F7462C33D11700B66668 /* AppleToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA7F7452C33D11700B66668 /* AppleToastView.swift */; };
+		9EA7F7482C35098800B66668 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA7F7472C35098800B66668 /* FirstViewController.swift */; };
+		9EA7F74A2C350A6E00B66668 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA7F7492C350A6E00B66668 /* SecondViewController.swift */; };
+		9EA7F74C2C35144400B66668 /* Dismissable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA7F74B2C35144400B66668 /* Dismissable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		9EA7F7142C33A79700B66668 /* swift-toast.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "swift-toast.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9EA7F7172C33A79700B66668 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9EA7F7192C33A79700B66668 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		9EA7F71B2C33A79700B66668 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		9EA7F71B2C33A79700B66668 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		9EA7F71E2C33A79700B66668 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9EA7F7202C33A79A00B66668 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9EA7F7232C33A79A00B66668 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -48,6 +51,9 @@
 		9EA7F7412C33C5BB00B66668 /* TextToastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextToastView.swift; sourceTree = "<group>"; };
 		9EA7F7432C33CB0800B66668 /* IconAppleToastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconAppleToastView.swift; sourceTree = "<group>"; };
 		9EA7F7452C33D11700B66668 /* AppleToastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleToastView.swift; sourceTree = "<group>"; };
+		9EA7F7472C35098800B66668 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
+		9EA7F7492C350A6E00B66668 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		9EA7F74B2C35144400B66668 /* Dismissable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dismissable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,8 +100,10 @@
 		9EA7F72B2C33A7B600B66668 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				9EA7F71B2C33A79700B66668 /* ViewController.swift */,
+				9EA7F71B2C33A79700B66668 /* MainViewController.swift */,
 				9EA7F71D2C33A79700B66668 /* Main.storyboard */,
+				9EA7F7472C35098800B66668 /* FirstViewController.swift */,
+				9EA7F7492C350A6E00B66668 /* SecondViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -112,6 +120,7 @@
 				9EA7F7352C33B04E00B66668 /* Direction.swift */,
 				9EA7F7372C33B1A900B66668 /* AnimationType.swift */,
 				9EA7F73B2C33BAAB00B66668 /* MulticastDelegate.swift */,
+				9EA7F74B2C35144400B66668 /* Dismissable.swift */,
 			);
 			path = Toast;
 			sourceTree = "<group>";
@@ -207,16 +216,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				9EA7F73A2C33B70D00B66668 /* ToastConfiguration.swift in Sources */,
+				9EA7F74A2C350A6E00B66668 /* SecondViewController.swift in Sources */,
 				9EA7F7322C33AD3600B66668 /* ToastDelegate.swift in Sources */,
-				9EA7F71C2C33A79700B66668 /* ViewController.swift in Sources */,
+				9EA7F71C2C33A79700B66668 /* MainViewController.swift in Sources */,
 				9EA7F7382C33B1A900B66668 /* AnimationType.swift in Sources */,
 				9EA7F73F2C33C43300B66668 /* ToastView.swift in Sources */,
 				9EA7F72E2C33A83A00B66668 /* ToastViewConfiguration.swift in Sources */,
 				9EA7F7442C33CB0800B66668 /* IconAppleToastView.swift in Sources */,
 				9EA7F7362C33B04E00B66668 /* Direction.swift in Sources */,
 				9EA7F7462C33D11700B66668 /* AppleToastView.swift in Sources */,
+				9EA7F74C2C35144400B66668 /* Dismissable.swift in Sources */,
 				9EA7F7302C33A90300B66668 /* ToastHelper.swift in Sources */,
 				9EA7F7182C33A79700B66668 /* AppDelegate.swift in Sources */,
+				9EA7F7482C35098800B66668 /* FirstViewController.swift in Sources */,
 				9EA7F73C2C33BAAB00B66668 /* MulticastDelegate.swift in Sources */,
 				9EA7F7422C33C5BB00B66668 /* TextToastView.swift in Sources */,
 				9EA7F71A2C33A79700B66668 /* SceneDelegate.swift in Sources */,

@@ -26,7 +26,7 @@ extension Toast {
                 view.alpha = alpha
                 
             case .scaleAndSlide(let scaleX, let scaleY, let x, let y):
-                view.transform = CGAffineTransform(scaleX: scaleX, y: y).translatedBy(x: x, y: y)
+                view.transform = CGAffineTransform(scaleX: scaleX, y: scaleY).translatedBy(x: x, y: y)
                 
             case .scale(let scaleX, let scaleY):
                 view.transform = CGAffineTransform(scaleX: scaleX, y: scaleY)

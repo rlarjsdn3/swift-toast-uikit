@@ -21,8 +21,8 @@ public struct ToastViewConfiguration {
     public let cornerRadius: CGFloat?
     
     public init(
-        minWidth: CGFloat = 58,
-        minHeight: CGFloat = 150,
+        minWidth: CGFloat = 150,
+        minHeight: CGFloat = 58,
         darkBackgroundColor: UIColor = UIColor(red: 0.13, green: 0.13, blue: 0.13, alpha: 1.0),
         lightBackgroundColor: UIColor = UIColor(red: 0.99, green: 0.99, blue: 0.99, alpha: 1.0),
         titleNumberOfLines: Int = 1,
