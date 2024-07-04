@@ -17,7 +17,8 @@ class SecondViewController: UIViewController {
     
     @IBAction func didTapToastButton(_ sender: UIButton) {
         let config = ToastConfiguration(enteringAnimation: .scaleAndSlide(scaleX: 0.9, scaleY: 0.9, x: 0, y: -100))
-        let toast = Toast.text("Hello, World!", subtitle: "UIKit", config: config)
+        let viewConfig = ToastViewConfiguration(yOffset: 10, isShowingShadow: true)
+        let toast = Toast.text("Hello, World!", subtitle: "UIKit", viewConfig: viewConfig, config: config)
         toast.show()
     }
     

@@ -9,6 +9,8 @@ import UIKit
 
 public class TextToastView: UIStackView {
     
+    // MARK: - Views
+    
     private lazy var titleLabel: UILabel = {
         UILabel()
     }()
@@ -16,6 +18,9 @@ public class TextToastView: UIStackView {
     private lazy var subtitleLabel: UILabel = {
         UILabel()
     }()
+    
+    
+    // MARK: - Intializer
     
     public init(
         _ title: NSAttributedString,

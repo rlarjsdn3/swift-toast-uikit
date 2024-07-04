@@ -17,8 +17,8 @@ class FirstViewController: UIViewController {
     
     @IBAction func didTapToastButton(_ sender: Any) {
         let viewConfig = ToastViewConfiguration(minWidth: 300)
-//        let config = ToastConfiguration(allowToastOverlap: false)
-        let config = ToastConfiguration(background: .color(color: UIColor.red))
+        let config = ToastConfiguration(allowToastOverlap: false)
+//        let config = ToastConfiguration(background: .color(color: UIColor.red))
         let toast = Toast.default(
             image: UIImage(systemName: "trash")!,
             title: "파일이 삭제되었습니다",

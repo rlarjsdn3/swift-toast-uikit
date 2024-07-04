@@ -10,6 +10,7 @@ import UIKit
 public class Toast {
     
     // MARK: - Properties
+    
     private static var activeToasts = [Toast]()
     
     public let view: ToastView
@@ -33,6 +34,29 @@ public class Toast {
     public private(set) var config: ToastConfiguration
     
     
+    // MARK: - Intializer
+    
+    public required init(view: ToastView, config: ToastConfiguration) {
+        self.config = config
+        self.view = view
+        
+        for dismissable in config.dismissables {
+            switch dismissable {
+            case .tap:
+                enableTapToClose()
+            case .longPress:
+                enableLongPressToClose()
+            case .swipe:
+                enablePanToClose()
+            default:
+                break
+            }
+        }
+        
+    }
+    
+    
+    
     // MARK: - Toast
     
     public static func text(
@@ -47,7 +71,7 @@ public class Toast {
                 subtitle: subtitle,
                 viewConfig: viewConfig
             ),
-            config: viewConfig
+            viewConfig: viewConfig
         )
         return self.init(view: view, config: config)
     }
@@ -64,7 +88,7 @@ public class Toast {
                 subtitle: subtitle,
                 viewConfig: viewConfig
             ),
-            config: viewConfig
+            viewConfig: viewConfig
         )
         return self.init(view: view, config: config)
     }
@@ -85,7 +109,7 @@ public class Toast {
                 subtitle: subtitle,
                 viewConfig: viewConfig
             ),
-            config: viewConfig
+            viewConfig: viewConfig
         )
         return self.init(view: view, config: config)
     }
@@ -106,7 +130,7 @@ public class Toast {
                 subtitle: subtitle,
                 viewConfig: viewConfig
             ),
-            config: viewConfig
+            viewConfig: viewConfig
         )
         return self.init(view: view, config: config)
     }
@@ -185,28 +209,6 @@ public class Toast {
             $0.closeTimer?.invalidate()
             $0.close(animated: false)
         }
-    }
-    
-    
-    // MARK: - Intializer
-    
-    public required init(view: ToastView, config: ToastConfiguration) {
-        self.config = config
-        self.view = view
-        
-        for dismissable in config.dismissables {
-            switch dismissable {
-            case .tap:
-                enableTapToClose()
-            case .longPress:
-                enableLongPressToClose()
-            case .swipe:
-                enablePanToClose()
-            default:
-                break
-            }
-        }
-        
     }
     
 }

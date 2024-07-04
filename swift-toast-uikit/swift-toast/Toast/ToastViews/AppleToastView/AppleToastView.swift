@@ -9,22 +9,30 @@ import UIKit
 
 public class AppleToastView: UIView, ToastView {
     
-    private let config: ToastViewConfiguration
+    // MARK: - Properties
+    
+    private let viewConfig: ToastViewConfiguration
     
     private let child: UIView
     
     private var toast: Toast?
     
+    
+    // MARK: - Intializer
+    
     public init(
         child: UIView,
-        config: ToastViewConfiguration = ToastViewConfiguration()
+        viewConfig: ToastViewConfiguration = ToastViewConfiguration()
     ) {
-        self.config = config
+        self.viewConfig = viewConfig
         self.child = child
         super.init(frame: .zero)
         
         addSubview(child)
     }
+    
+    
+    // MARK: - Helpers
     
     public override func removeFromSuperview() {
         super.removeFromSuperview()
@@ -37,8 +45,8 @@ public class AppleToastView: UIView, ToastView {
         translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            widthAnchor.constraint(equalToConstant: config.minWidth),
-            heightAnchor.constraint(equalToConstant: config.minHeight),
+            widthAnchor.constraint(equalToConstant: viewConfig.minWidth),
+            heightAnchor.constraint(equalToConstant: viewConfig.minHeight),
             leadingAnchor.constraint(greaterThanOrEqualTo: superview.leadingAnchor, constant: 10),
             trailingAnchor.constraint(lessThanOrEqualTo: superview.trailingAnchor, constant: -10),
             centerXAnchor.constraint(equalTo: superview.centerXAnchor)
@@ -46,11 +54,20 @@ public class AppleToastView: UIView, ToastView {
         
         switch toast.config.direction {
         case .top:
-            topAnchor.constraint(equalTo: superview.layoutMarginsGuide.topAnchor, constant: 0).isActive = true
+            topAnchor.constraint(
+                equalTo: superview.layoutMarginsGuide.topAnchor,
+                constant: 0 + viewConfig.yOffset
+            ).isActive = true
         case .bottom:
-            bottomAnchor.constraint(equalTo: superview.layoutMarginsGuide.bottomAnchor, constant: 0).isActive = true
+            bottomAnchor.constraint(
+                equalTo: superview.layoutMarginsGuide.bottomAnchor,
+                constant: 0 + viewConfig.yOffset
+            ).isActive = true
         case .center:
-            centerYAnchor.constraint(equalTo: superview.layoutMarginsGuide.centerYAnchor, constant: 0).isActive = true
+            centerYAnchor.constraint(
+                equalTo: superview.layoutMarginsGuide.centerYAnchor,
+                constant: 0 + viewConfig.yOffset
+            ).isActive = true
         }
         
         addSubviewConstraints()
@@ -70,14 +87,16 @@ public class AppleToastView: UIView, ToastView {
         layoutIfNeeded()
         clipsToBounds = true
         layer.zPosition = 999 // ⭐️
-        layer.cornerRadius = config.cornerRadius ?? frame.height / 2
+        layer.cornerRadius = viewConfig.cornerRadius ?? frame.height / 2
         if #available(iOS 12.0, *) {
-            backgroundColor = traitCollection.userInterfaceStyle == .light ? config.lightBackgroundColor : config.darkBackgroundColor
+            backgroundColor = traitCollection.userInterfaceStyle == .light ? viewConfig.lightBackgroundColor : viewConfig.darkBackgroundColor
         } else {
-            backgroundColor = config.lightBackgroundColor
+            backgroundColor = viewConfig.lightBackgroundColor
         }
         
-        addShadow()
+        if viewConfig.isShowingShadow {
+            addShadow()
+        }
     }
     
     private func addSubviewConstraints() {

@@ -17,6 +17,7 @@ extension Toast {
         case custom(transformation: CGAffineTransform)
         case `default`
         
+        // View의 시작 이동 위치 및 크기로 이동하는 메서드
         func apply(to view: UIView) {
             switch self {
             case .slide(let x, let y):
@@ -39,6 +40,7 @@ extension Toast {
             }
         }
         
+        // View의 원래 위치로 이동하는 메서드
         func undo(from view: UIView) {
             switch self {
             case .slide, .scaleAndSlide, .scale, .custom:

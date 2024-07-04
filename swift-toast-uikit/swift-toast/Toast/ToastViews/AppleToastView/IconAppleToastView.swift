@@ -9,6 +9,8 @@ import UIKit
 
 public class IconAppleToastView: UIStackView {
     
+    // MARK: - Views
+    
     private lazy var vStack: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .vertical
@@ -44,6 +46,9 @@ public class IconAppleToastView: UIStackView {
             return .black
         }
     }
+    
+    
+    // MARK: - Intializer
     
     public init(
         image: UIImage,
